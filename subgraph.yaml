@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,16 +8,17 @@ dataSources:
     source:
       address: "0x5b4293b4c0f36cb5d4448950830bc777759b6c4f"
       abi: DataEdge
+      startBlock: 24008090
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
-        - Message
+        - OracleMessage
       abis:
         - name: DataEdge
           file: ./abis/DataEdge.json
-      eventHandlers:
-        - event: Message(bytes)
-          handler: handleMessage
+      callHandlers:
+        - function: submitQoSPayload(bytes)
+          handler: handleSubmitQoSPayload
       file: ./src/data-edge.ts

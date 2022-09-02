@@ -1,21 +1,15 @@
 [
   {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "bytes",
-        "name": "data",
-        "type": "bytes"
-      }
-    ],
-    "name": "Message",
-    "type": "event"
+    "stateMutability": "payable",
+    "type": "fallback"
   },
-  { "stateMutability": "payable", "type": "fallback" },
   {
     "inputs": [
-      { "internalType": "bytes", "name": "_payload", "type": "bytes" }
+      {
+        "internalType": "bytes",
+        "name": "_payload",
+        "type": "bytes"
+      }
     ],
     "name": "submitQoSPayload",
     "outputs": [],

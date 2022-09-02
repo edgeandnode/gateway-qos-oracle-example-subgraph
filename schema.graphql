@@ -1,5 +1,8 @@
-type ExampleEntity @entity {
+type OracleMessage @entity {
+  "Transaction hash the message was posted"
   id: ID!
-  count: BigInt!
-  data: Bytes! # bytes
+  "JSON string payload of oracle message. Users can filter on topic field and use the IPFS hash to pull and parse QoS data."
+  payload: String!
+  "Epoch timestamp (in seconds) the message was posted to chain"
+  createdAt: BigInt!
 }
